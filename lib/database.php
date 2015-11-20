@@ -3,7 +3,7 @@
 class DatabaseMongo {
 
     const DBHOST = '127.0.0.1';
-    const DBNAME = 'uenf';
+    const DBNAME = 'sistemaPortaria';
 
     private static $instance;
     public $connection;

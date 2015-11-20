@@ -8,6 +8,21 @@
 class Controller {
 
     public $view;
+    protected $directory;
+
+
+    public function __construct() {
+		$this->directory = $this->getShortName();
+		if (isset($_POST['posts'])) {
+			if (is_string($_POST['posts'])) {
+				parse_str($_POST['posts'], $this->posts);
+			} else if (is_array($_POST['posts'])) {
+				$this->posts = $_POST['posts'];
+			}
+		} else {
+			$this->posts = $_POST;
+		}
+    }
 
     public function getView() {
         return $this->view;
@@ -39,6 +54,13 @@ class Controller {
         $controller = str_replace("controller", "", $controller);
         return $controller;
     }
+    
+    /*
+     * Retorna o nome base do controller, Ex HomeController retorna "Home"
+     */
+    public function getShortName() {
+		return lcfirst(str_replace('Controller', '', get_class($this)));
+	}
 
     public function index() {
         return $this->retrieve();

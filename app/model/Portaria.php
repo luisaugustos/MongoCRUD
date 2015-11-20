@@ -7,12 +7,21 @@
  */
 class Portaria {
 
+    public $identificacao;
     public $numero;
     public $data;
     public $interessados = array();
     public $conteudo;
     public $status;
-    
+
+    public function getIdentificacao() {
+        return $this->identificacao;
+    }
+
+    public function setIdentificacao($identificacao) {
+        $this->identificacao = $identificacao;
+    }
+
     public function getNumero() {
         return $this->numero;
     }

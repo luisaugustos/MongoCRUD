@@ -7,6 +7,11 @@
                     <input type="hidden" name="id" id="id" value="">
                     
                     <div class="form-group">
+                        <label for="identificacao" class="required">Identificação da Portaria:</label>
+                        <input type="text" class="form-control required" id="numero" name="identificacao" placeholder="Portaria nº 273/GDG/IFC-CAM/2015" value="">
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="numero" class="required">Numero:</label>
                         <input type="text" class="form-control required" id="numero" name="numero" placeholder="Numero Portaria" value="">
                     </div>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portarias</title>
+        <title>..:: Sistema Portarias ::..</title>
         <base href="<?= BASE_URL ?>" >
 
         <!-- Bootstrap -->
@@ -33,7 +33,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">Portarias</a>
+                    <a class="navbar-brand" href="">Sistema Portarias</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
