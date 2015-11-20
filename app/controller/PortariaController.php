@@ -19,7 +19,12 @@ class PortariaController extends Controller {
         return $this->view;
 	}
     
+    /*
+     * Variavel $this->posts retorna todos os atributos obtidos via post
+     */
     public function save() {
+        var_dump($this->posts);
+        die;
         $p = new Portaria();
 //        $p->setNumero($numero);
 //        $p->setData($data);

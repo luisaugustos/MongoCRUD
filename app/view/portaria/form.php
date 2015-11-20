@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">Cadastro Portarias</div>
     <div class="panel-body">
-        <form class="form" id="form" role="form" method="post" action="">
+        <form class="form" id="form" role="form" method="post" action="portaria/save">
             <div class="row">
                 <div class="col-md-6">
                     <input type="hidden" name="id" id="id" value="">
@@ -33,14 +33,15 @@
 
                 </div>
             </div>
-        </form>
+        
     </div>
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-6"></div>
             <div class="col-md-6">
-                <button class="pull-right btn btn-primary">Salvar</button>
+                <button type="submit" class="pull-right btn btn-primary">Salvar</button>
             </div>
         </div>
+        </form>
     </div>
 </div>
