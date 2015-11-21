@@ -1,7 +1,14 @@
 <div class="panel panel-default">
     <div class="panel-heading">Lista Portarias</div>
     <div class="panel-body">
-        <p>table aqui com portarias</p>
+        <p>
+          <?php
+            foreach ($array as $d) {
+              var_dump($d);
+            }
+          ?>
+
+        </p>
     </div>
     <div class="panel-footer">
         <div class="row">

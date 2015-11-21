@@ -70,10 +70,10 @@
                         <?php include_once($controller->getContent()); ?>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
         <!------------------------------ JS ------------------------------>
         <script src="app/web/js/jquery.min.js"></script>
         <script src="app/web/js/bootstrap.min.js"></script>
