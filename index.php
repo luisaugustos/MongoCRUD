@@ -2,12 +2,12 @@
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 $data = UrlUtil::getInstance()->unmaskURL($_REQUEST['rawUrl']);
-$c = $data['controller'] ? $data['controller'] : 'HomeController';
+$c = $data['controller'] ? $data['controller'] : 'Home';
 $m = $data['method'] ? $data['method'] : 'index';
 $p = $data['params'];
 
 $c = ucfirst($c) . 'Controller';
-var_dump($c);
+//var_dump($c);
 
 $controller = new $c;
 
