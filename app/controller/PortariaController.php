@@ -24,7 +24,7 @@ class PortariaController extends Controller {
     //die;
 
     $portaria = new Portaria();
-    if($portaria->remove($this->collection, array('_id' => $p)))
+    if($portaria->remove($this->collection, array('_id' => new MongoId($p))))
     {
       header('Location: ' . BASE_URL . 'portaria');
     }
