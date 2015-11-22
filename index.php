@@ -2,11 +2,11 @@
 
 require_once 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
-$path = strlen($_SERVER["DOCUMENT_ROOT"]) -1;
+$path = strlen($_SERVER["DOCUMENT_ROOT"]) -2;
 $exclude = substr( $_SERVER["SCRIPT_FILENAME"], $path, -10);
 
 $url = substr($_SERVER['REQUEST_URI'], strlen($exclude)); // Url de produção /site/controller/method/parameter
-list($p, $c, $m) = explode('/', $url);
+list($c, $m, $p) = explode('/', $url);
 
 $c = ucfirst($c) . 'Controller';
 if ($m == null)
@@ -16,7 +16,7 @@ if ($m == null)
 }
 
 $controller = new $c;
-
+//var_dump($c);
 if (!is_array($p)) {
     if ($p != null && strlen($p) > 0) {
         $p = [$p];
@@ -24,6 +24,7 @@ if (!is_array($p)) {
         $p = [];
     }
 }
+
 
 $content = call_user_func_array(array($controller, $m), $p);
 

@@ -7,16 +7,27 @@
 */
 class PortariaController extends Controller {
 
-  public $collection = 'aluno';
+  public $collection = 'registros';
 
   public function index() {
     $this->view = 'retrieve';
 
     /* Listando as Potarias */
     $p = new Portaria();
-    $array = $p->retrieve('registros');
+    $this->resultados = $p->retrieve($this->collection);
 
-    return $this->view;
+  }
+
+  public function deletar($p)
+  {
+    //var_dump($p);
+    //die;
+    $p = new Portaria();
+    if($p->remove($this->collection, array('_id' => $p)))
+    {
+      header('Location: ' . BASE_URL . 'portaria');
+    }
+
   }
 
   public function inserir() {
@@ -28,17 +39,23 @@ class PortariaController extends Controller {
   * Variavel $this->posts retorna todos os atributos obtidos via post
   */
   public function save() {
-    var_dump($this->posts);
-    die;
+
+    //var_dump($this->post);
+    //die;
+
     $p = new Portaria();
-    //        $p->setNumero($numero);
-    //        $p->setData($data);
-    //        $p->setInteressados($interessados);
-    //        $p->setConteudo($conteudo);
-    //        $p->setStatus($status);
-    var_dump($p);
-    die;
-    DatabaseMongo::getInstance()->insert($p, $this->collection);
+    $p->setIdentificacao($_POST['identificacao']);
+    $p->setNumero($_POST['identificacao']);
+    $p->setData($_POST['data']);
+    $p->setInteressados($_POST['interessados']);
+    $p->setConteudo($_POST['conteudo']);
+    $p->setStatus($_POST['status']);
+
+    //var_dump($p);
+    //die;
+
+    $p->insert($p, $this->collection);
+    header('Location: ' . BASE_URL . 'portaria');
   }
 
 }

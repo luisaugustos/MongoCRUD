@@ -23,10 +23,10 @@ class Model extends DatabaseMongo {
     }
   }
 
-  public function update($collectionName, $criteria, $update, $confirm) {
+  public function update($collectionName, $criterio, $update, $confirm) {
     $collection = $this->database->$collectionName;
     try {
-      $collection->update($criteria, $update, array("multiple" => true));
+      $collection->update($criterio, $update, array("multiple" => true));
       $num_rows = $collection->find($confirm)->count();
       return (!empty($num_rows) ) ? $num_rows : 0;
     } catch (MongoException $e) {
@@ -34,11 +34,11 @@ class Model extends DatabaseMongo {
     }
   }
 
-  public function remove($collectionName, $criteria) {
+  public function remove($collectionName, $criterio) {
     $collection = $this->database->$collectionName;
     try {
-      $collection->remove($criteria);
-      $num_rows = $collection->find($criteria)->count();
+      $collection->remove($criterio);
+      $num_rows = $collection->find($criterio)->count();
       return ( empty($num_rows) ) ? 1 : 0;
     } catch (MongoException $e) {
       return "Erro ao remover";
