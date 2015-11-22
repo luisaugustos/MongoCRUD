@@ -39,8 +39,6 @@ class Model extends DatabaseMongo {
     try {
       $collection->remove($criterio, array('w' => true));
       $num_rows = $collection->find($criterio)->count();
-      var_dump($num_rows);
-      die;
       return ( empty($num_rows) ) ? 1 : 0;
     } catch (MongoException $e) {
       return "Erro ao remover";
