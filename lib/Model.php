@@ -37,8 +37,10 @@ class Model extends DatabaseMongo {
   public function remove($collectionName, $criterio) {
     $collection = $this->database->$collectionName;
     try {
-      $collection->remove($criterio);
+      $collection->remove($criterio, array('safe' => true));
       $num_rows = $collection->find($criterio)->count();
+      var_dump($num_rows);
+      die;
       return ( empty($num_rows) ) ? 1 : 0;
     } catch (MongoException $e) {
       return "Erro ao remover";

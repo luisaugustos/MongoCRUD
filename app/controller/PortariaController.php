@@ -22,8 +22,9 @@ class PortariaController extends Controller {
   {
     //var_dump($p);
     //die;
-    $p = new Portaria();
-    if($p->remove($this->collection, array('_id' => $p)))
+
+    $portaria = new Portaria();
+    if($portaria->remove($this->collection, array('_id' => $p)))
     {
       header('Location: ' . BASE_URL . 'portaria');
     }
@@ -44,18 +45,24 @@ class PortariaController extends Controller {
     //die;
 
     $p = new Portaria();
-    $p->setIdentificacao($_POST['identificacao']);
-    $p->setNumero($_POST['identificacao']);
-    $p->setData($_POST['data']);
-    $p->setInteressados($_POST['interessados']);
-    $p->setConteudo($_POST['conteudo']);
-    $p->setStatus($_POST['status']);
+
+    $portariaAdd = array(
+      'identificacao' => $_POST['identificacao'],
+      'numero' => $_POST['numero'],
+      'data' => $_POST['data'],
+      'interessados' => $_POST['interessados'],
+      'conteudo' => $_POST['conteudo'],
+      'status' => $_POST['status'],
+    );
 
     //var_dump($p);
     //die;
 
-    $p->insert($p, $this->collection);
-    header('Location: ' . BASE_URL . 'portaria');
+    if($p->insert($portariaAdd, $this->collection))
+    {
+      header('Location: ' . BASE_URL . 'portaria');
+    }
+
   }
 
 }
