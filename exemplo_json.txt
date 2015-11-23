@@ -1,0 +1,11 @@
+database: sistemaPortaria
+collection: registros
+{
+    "_id" : ObjectId("5652818b604d4ce86f0041a7"),
+    "identificacao" : "GDG/IFC-CAM",
+    "numero" : "273",
+    "data" : "2015-11-23",
+    "interessados" : "TESTE",
+    "conteudo" : "TESTE",
+    "status" : null
+}
